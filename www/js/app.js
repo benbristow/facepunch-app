@@ -1,11 +1,4 @@
-// Ionic facepunchApp App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'facepunchApp' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'facepunchApp.services' is found in services.js
-// 'facepunchApp.controllers' is found in controllers.js
-angular.module('facepunchApp', ['restangular', 'ionic'])
+angular.module('facepunchApp', ['restangular', 'ionic', 'angular-loading-bar'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -26,7 +19,8 @@ angular.module('facepunchApp', ['restangular', 'ionic'])
   //Tabs at bottom for all devices
   $ionicConfigProvider.tabs.position('bottom');
 
-  RestangularProvider.setBaseUrl('https://fpapi.benbristow.co.uk/v1');
+  RestangularProvider.setBaseUrl('http://localhost:4567/v1');
+  //RestangularProvider.setBaseUrl('https://fpapi.benbristow.co.uk/v1');
 
   $stateProvider
 
@@ -67,7 +61,7 @@ angular.module('facepunchApp', ['restangular', 'ionic'])
   })
 
   .state('tab.thread-detail', {
-    url: '/threads/:threadId',
+    url: '/threads/:threadId?page',
     views: {
       'tab-forums': {
         templateUrl: 'templates/thread-detail.html',
@@ -76,7 +70,7 @@ angular.module('facepunchApp', ['restangular', 'ionic'])
     },
     resolve: {
       thread: function(Threads, $stateParams) {
-        return Threads.findOne($stateParams.threadId);
+        return Threads.findOne($stateParams.threadId, $stateParams.page);
       }
     }
   });

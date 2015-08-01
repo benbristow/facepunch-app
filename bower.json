@@ -5,6 +5,7 @@
     "ionic": "driftyco/ionic-bower#1.0.1"
   },
   "dependencies": {
-    "restangular": "~1.5.1"
+    "restangular": "~1.5.1",
+    "angular-loading-bar": "~0.8.0"
   }
 }
