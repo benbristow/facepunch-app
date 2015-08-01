@@ -17,15 +17,16 @@ angular.module('facepunchApp', ['restangular', 'ionic'])
 
     }
     if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, RestangularProvider) {
+  //Tabs at bottom for all devices
+  $ionicConfigProvider.tabs.position('bottom');
 
-  RestangularProvider.setBaseUrl('http://localhost:4567/v1');
+  RestangularProvider.setBaseUrl('https://fpapi.benbristow.co.uk/v1');
 
   $stateProvider
 
