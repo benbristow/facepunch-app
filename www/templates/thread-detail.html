@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="button-bar bar-assertive">
-        <a class="button" ng-click="prevPage()">Previous Page</a>
+        <a class="button" ng-click="prevPage()" ng-disabled="thread.page == 1">Previous Page</a>
         <a class="button" ng-click="nextPage()">Next Page</a>
       </div>
     </ion-list>

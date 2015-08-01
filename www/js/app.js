@@ -19,8 +19,8 @@ angular.module('facepunchApp', ['restangular', 'ionic', 'angular-loading-bar'])
   //Tabs at bottom for all devices
   $ionicConfigProvider.tabs.position('bottom');
 
-  RestangularProvider.setBaseUrl('http://localhost:4567/v1');
-  //RestangularProvider.setBaseUrl('https://fpapi.benbristow.co.uk/v1');
+  //RestangularProvider.setBaseUrl('http://localhost:4567/v1');
+  RestangularProvider.setBaseUrl('https://fpapi.benbristow.co.uk/v1');
 
   $stateProvider
 
