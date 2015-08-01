@@ -1,0 +1,16 @@
+<ion-view view-title="{{thread.title}}">
+  <ion-content>
+    <ion-list>
+      <div ng-repeat="post in thread.posts">
+        <div class="posthead">
+          <strong>{{post.poster.name}}</strong> - Posted {{ post.date }}
+        </div>
+
+        <ion-item ng-href="#/tab/threads/{{thread.id}}">
+          <div class="postbit" ng-bind-html="post.body"/>
+        </ion-item>
+
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
